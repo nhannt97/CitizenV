@@ -10,6 +10,9 @@ const DashboardDefault = Loadable(lazy(() => import('views/dashboard/Default')))
 // utilities routing
 const CitizenList = Loadable(lazy(() => import('views/citizens/List')));
 const CitizenAddNew = Loadable(lazy(() => import('views/citizens/AddNew')));
+const UserList = Loadable(lazy(() => import('views/users/List')));
+const UserAddNew = Loadable(lazy(() => import('views/users/AddNew')));
+const ProvinceList = Loadable(lazy(() => import('views/provinces/List')));
 
 // sample page routing
 
@@ -28,6 +31,10 @@ const MainRoutes = {
             element: <DashboardDefault />
         },
         {
+            path: '/provinces/list',
+            element: <ProvinceList />
+        },
+        {
             path: '/citizens/list',
             element: <CitizenList />
         },
@@ -41,15 +48,15 @@ const MainRoutes = {
         },
         {
             path: '/users/list',
-            element: <CitizenList />
+            element: <UserList />
         },
         {
             path: '/users/add-new',
-            element: <CitizenAddNew />
+            element: <UserAddNew />
         },
         {
             path: '/users/:userId/edit',
-            element: <CitizenAddNew />
+            element: <UserAddNew />
         },
     ]
 };
